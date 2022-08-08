@@ -10,10 +10,19 @@
 </head>
 <body>
 <h1>Klipper rotation distance calculator</h1>
+<p>Based on
+	<a target="_blank"
+		href="https://github.com/Klipper3d/klipper/blob/master/docs/Rotation_Distance.md#calibrating-rotation_distance-on-extruders">
+		official docs</a>
+</p>
 <ol>
 	<li>Mark 70mm above extruder</li>
-	<li>Execute <pre>G91</pre></li>
-	<li>Execute <pre>G1 E50 F60</pre></li>
+	<li>Execute
+		<pre>G91</pre>
+	</li>
+	<li>Execute
+		<pre>G1 E50 F60</pre>
+	</li>
 	<li>Distance measured: <input class="form-control" type="number" onchange="calc()" id="actual"></li>
 	<li>Previous rotation distance: <input class="form-control" type="number" onchange="calc()" id="prev"></li>
 	<li>New rotation distance: <input class="form-control" type="number" onchange="calc()" id="result"></li>
