@@ -23,17 +23,20 @@
 	<li>Execute
 		<pre>G1 E50 F60</pre>
 	</li>
-	<li>Distance measured: <input class="form-control" type="number" onchange="calc()" id="actual"></li>
+	<li>Mark distance measured: <input class="form-control" type="number" onchange="calc()" id="mark-distance"></li>
 	<li>Previous rotation distance: <input class="form-control" type="number" onchange="calc()" id="prev"></li>
 	<li>New rotation distance: <input class="form-control" type="number" onchange="calc()" id="result"></li>
 </ol>
 
 <script>
+	let totalDistance = 70;
 	let requestedExtrudeDistance = 50;
 
 	function calc() {
-		let actual = document.getElementById('actual').value;
+		let markDistance = document.getElementById('mark-distance').value;
 		let prev = document.getElementById('prev').value;
+
+		let actual = totalDistance - markDistance;
 		let rotationDistance = prev * actual / requestedExtrudeDistance;
 
 		document.getElementById('result').value = rotationDistance.toFixed(3);
